@@ -1,12 +1,28 @@
 const CHECKPOINTS = [
-  { id:'chop', name:'Тиса – Захонь', country:'HU', flag:'🇭🇺', cargo:true, dist:20, url:'https://nakordoni.com.ua/chergy/ugorshhyna/chop-zahon/' },
-  { id:'uz', name:'Ужгород – Вишнє Немецьке', country:'SK', flag:'🇸🇰', cargo:true, dist:5, url:'https://nakordoni.com.ua/chergy/slovachchyna/uzhgorod-vyshne-nyemeczke/' },
-  { id:'dya', name:'Дяково – Халмеу', country:'RO', flag:'🇷🇴', cargo:true, dist:110, url:'https://nakordoni.com.ua/chergy/rumuniya/dyakovo-halmeu/' },
-  { id:'luz', name:'Лужанка – Берегшурань', country:'HU', flag:'🇭🇺', cargo:false, dist:80, url:'https://nakordoni.com.ua/chergy/ugorshhyna/luzhanka-beregshuran/' },
-  { id:'mb', name:'Малий Березний – Убля', country:'SK', flag:'🇸🇰', cargo:false, dist:40, url:'https://nakordoni.com.ua/chergy/slovachchyna/malyj-bereznyj-ublya/' },
-  { id:'vyl', name:'Вилок – Тісабеч', country:'HU', flag:'🇭🇺', cargo:false, dist:100, url:'https://nakordoni.com.ua/chergy/ugorshhyna/vylok-tisabech/' },
-  { id:'sol', name:'Солотвино – Сігету Мармацієй', country:'RO', flag:'🇷🇴', cargo:false, dist:130, url:'https://nakordoni.com.ua/chergy/rumuniya/solotvyno-sigetu-marmacziyej/' },
-  { id:'dzv', name:'Дзвінкове – Лонья', country:'HU', flag:'🇭🇺', cargo:false, dist:70, url:'https://nakordoni.com.ua/chergy/ugorshhyna/dzvinkove-lonya/' },
+  { id:'chop', name:'Тиса – Захонь', country:'HU', flag:'🇭🇺', cargo:true, dist:20,
+    url:'https://nakordoni.com.ua/chergy/ugorshhyna/chop-zahon/',
+    cam:'https://dpsu.gov.ua/uk/chop-tisa-zahon' },
+  { id:'uz', name:'Ужгород – Вишнє Немецьке', country:'SK', flag:'🇸🇰', cargo:true, dist:5,
+    url:'https://nakordoni.com.ua/chergy/slovachchyna/uzhgorod-vyshne-nyemeczke/',
+    cam:'https://dpsu.gov.ua/uk/uzhgorod-vishnye-nyemecke' },
+  { id:'dya', name:'Дяково – Халмеу', country:'RO', flag:'🇷🇴', cargo:true, dist:110,
+    url:'https://nakordoni.com.ua/chergy/rumuniya/dyakovo-halmeu/',
+    cam:'https://dpsu.gov.ua/uk/dyakove-halmeu' },
+  { id:'luz', name:'Лужанка – Берегшурань', country:'HU', flag:'🇭🇺', cargo:false, dist:80,
+    url:'https://nakordoni.com.ua/chergy/ugorshhyna/luzhanka-beregshuran/',
+    cam:'https://dpsu.gov.ua/uk/luzhanka-beregshuran' },
+  { id:'mb', name:'Малий Березний – Убля', country:'SK', flag:'🇸🇰', cargo:false, dist:40,
+    url:'https://nakordoni.com.ua/chergy/slovachchyna/malyj-bereznyj-ublya/',
+    cam:'https://dpsu.gov.ua/uk/malyj-bereznyj-ublya' },
+  { id:'vyl', name:'Вилок – Тісабеч', country:'HU', flag:'🇭🇺', cargo:false, dist:100,
+    url:'https://nakordoni.com.ua/chergy/ugorshhyna/vylok-tisabech/',
+    cam:'https://dpsu.gov.ua/uk/vilok-tisabech' },
+  { id:'sol', name:'Солотвино – Сігету Мармацієй', country:'RO', flag:'🇷🇴', cargo:false, dist:130,
+    url:'https://nakordoni.com.ua/chergy/rumuniya/solotvyno-sigetu-marmacziyej/',
+    cam:'https://dpsu.gov.ua/uk/solotvino-sigetu-marmatsiej' },
+  { id:'dzv', name:'Дзвінкове – Лонья', country:'HU', flag:'🇭🇺', cargo:false, dist:70,
+    url:'https://nakordoni.com.ua/chergy/ugorshhyna/dzvinkove-lonya/',
+    cam:'https://dpsu.gov.ua/uk/dzvinkove-lonya' },
 ];
 
 function parseQueue(html) {
@@ -19,7 +35,7 @@ function parseQueue(html) {
   ];
   for (const re of patterns) {
     const m = html.match(re);
-    if (m && m[1]) { const n = parseInt(m[1],10); if (n>=0 && n<2000) return n; }
+    if (m && m[1]) { const n = parseInt(m[1],10); if (n>=0&&n<2000) return n; }
   }
   return null;
 }
@@ -27,7 +43,7 @@ function parseQueue(html) {
 async function fetchCheckpoint(cp) {
   try {
     const res = await fetch(cp.url, {
-      headers: { 'User-Agent':'Mozilla/5.0 (compatible; CargoCross/1.0)', 'Accept':'text/html' },
+      headers: {'User-Agent':'Mozilla/5.0 (compatible; CargoCross/1.0)','Accept':'text/html'},
       signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);

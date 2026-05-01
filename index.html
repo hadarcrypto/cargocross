@@ -31,7 +31,6 @@
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{font-family:var(--f1);background:var(--bg);color:var(--txt);min-height:100vh;padding-bottom:48px}
 
-/* ── TOP BAR ── */
 .bar{
   position:sticky;top:0;z-index:99;
   display:flex;align-items:center;justify-content:space-between;
@@ -52,44 +51,17 @@ body{font-family:var(--f1);background:var(--bg);color:var(--txt);min-height:100v
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
 .clock{font-family:var(--f2);font-size:11px;color:var(--muted)}
 
-/* ── LOADING STATE ── */
-.loading{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  min-height:60vh;gap:16px;
-}
-.spinner{
-  width:36px;height:36px;border:2px solid var(--brd2);
-  border-top-color:var(--G);border-radius:50%;
-  animation:spin 1s linear infinite;
-}
+.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:16px;}
+.spinner{width:36px;height:36px;border:2px solid var(--brd2);border-top-color:var(--G);border-radius:50%;animation:spin 1s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading-text{font-family:var(--f2);font-size:11px;color:var(--muted);letter-spacing:.08em}
 
-/* ── ERROR STATE ── */
-.error-box{
-  margin:14px;padding:20px;
-  background:rgba(255,51,72,.07);
-  border:1px solid rgba(255,51,72,.25);
-  border-radius:12px;text-align:center;
-}
+.error-box{margin:14px;padding:20px;background:rgba(255,51,72,.07);border:1px solid rgba(255,51,72,.25);border-radius:12px;text-align:center;}
 .error-box p{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.6}
-.retry-btn{
-  margin-top:16px;display:inline-block;
-  padding:10px 20px;background:var(--G);color:#000;
-  border-radius:8px;font-weight:600;font-size:13px;cursor:pointer;
-}
+.retry-btn{margin-top:16px;display:inline-block;padding:10px 20px;background:var(--G);color:#000;border-radius:8px;font-weight:600;font-size:13px;cursor:pointer;}
 
-/* ── HERO ── */
-.hero{
-  margin:14px 14px 0;padding:20px;
-  background:var(--s1);border:1px solid var(--brd);border-radius:14px;
-  position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 50% at 80% 50%,rgba(0,240,122,.06),transparent);
-  pointer-events:none;
-}
+.hero{margin:14px 14px 0;padding:20px;background:var(--s1);border:1px solid var(--brd);border-radius:14px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 50%,rgba(0,240,122,.06),transparent);pointer-events:none;}
 .hero-label{font-family:var(--f2);font-size:9px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
 .hero-kpp{font-size:22px;font-weight:700;color:var(--G);line-height:1.2;margin-bottom:3px}
 .hero-sub{font-size:12px;color:var(--muted);margin-bottom:16px}
@@ -98,114 +70,57 @@ body{font-family:var(--f1);background:var(--bg);color:var(--txt);min-height:100v
 .hbox-l{font-family:var(--f2);font-size:8px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-bottom:5px}
 .hbox-v{font-family:var(--f2);font-size:20px;font-weight:700;line-height:1}
 .hbox-v .u{font-size:10px;font-weight:400;color:var(--muted);margin-left:2px}
-.hero-footer{
-  margin-top:14px;display:flex;align-items:center;gap:8px;
-  font-family:var(--f2);font-size:9px;color:var(--dim);flex-wrap:wrap;
-}
-.src-tag{
-  padding:2px 8px;
-  background:rgba(47,168,255,.1);border:1px solid rgba(47,168,255,.2);
-  border-radius:4px;color:var(--B);
-}
-.real-tag{
-  padding:2px 8px;
-  background:rgba(0,240,122,.1);border:1px solid rgba(0,240,122,.2);
-  border-radius:4px;color:var(--G);
-}
+.hero-footer{margin-top:14px;display:flex;align-items:center;gap:8px;font-family:var(--f2);font-size:9px;color:var(--dim);flex-wrap:wrap;}
+.src-tag{padding:2px 8px;background:rgba(47,168,255,.1);border:1px solid rgba(47,168,255,.2);border-radius:4px;color:var(--B);}
+.real-tag{padding:2px 8px;background:rgba(0,240,122,.1);border:1px solid rgba(0,240,122,.2);border-radius:4px;color:var(--G);}
 
-/* ── SECTION HEADER ── */
 .sec{display:flex;align-items:center;gap:8px;padding:18px 14px 10px}
 .sc{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .sl{font-family:var(--f2);font-size:9px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
 .sf{font-size:14px}
 .sline{flex:1;height:1px;background:var(--brd)}
 
-/* ── CARDS ── */
 .cards{padding:0 14px;display:flex;flex-direction:column;gap:8px}
-
-.card{
-  background:var(--s1);border:1px solid var(--brd);
-  border-radius:12px;overflow:hidden;
-  transition:border-color .2s;
-}
+.card{background:var(--s1);border:1px solid var(--brd);border-radius:12px;overflow:hidden;transition:border-color .2s;}
 .card.rank1{border-color:rgba(0,240,122,.3)}
 .card.rank1 .chead{background:rgba(0,240,122,.03)}
-
-.chead{
-  display:flex;align-items:center;padding:13px 14px;gap:12px;
-  cursor:pointer;user-select:none;
-}
+.chead{display:flex;align-items:center;padding:13px 14px;gap:12px;cursor:pointer;user-select:none;}
 .chead:active{background:var(--s2)}
-
-.crank{
-  width:22px;height:22px;border-radius:6px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--f2);font-size:11px;font-weight:700;
-  background:var(--s2);border:1px solid var(--brd2);color:var(--muted);
-}
+.crank{width:22px;height:22px;border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--f2);font-size:11px;font-weight:700;background:var(--s2);border:1px solid var(--brd2);color:var(--muted);}
 .card.rank1 .crank{background:rgba(0,240,122,.15);border-color:rgba(0,240,122,.3);color:var(--G)}
-
 .cinfo{flex:1;min-width:0}
 .cname{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}
 .cmeta{font-family:var(--f2);font-size:9px;color:var(--muted);margin-top:2px;letter-spacing:.03em}
-
 .pill{font-family:var(--f2);font-size:9px;font-weight:700;letter-spacing:.07em;padding:4px 9px;border-radius:20px;flex-shrink:0;white-space:nowrap}
 .pg{background:rgba(0,240,122,.12);color:var(--G)}
 .py{background:rgba(255,183,0,.12);color:var(--Y)}
 .pr{background:rgba(255,51,72,.12);color:var(--R)}
 .poff{background:rgba(90,122,149,.1);color:var(--muted)}
 .pna{background:rgba(90,122,149,.07);color:var(--dim)}
-
-/* expanded body */
 .cbody{border-top:1px solid var(--brd);display:none}
 .cbody.open{display:block}
-
 .mrow{display:grid;grid-template-columns:repeat(3,1fr)}
 .mbox{padding:11px 13px;border-right:1px solid var(--brd)}
 .mbox:last-child{border-right:none}
 .ml{font-family:var(--f2);font-size:8px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-bottom:5px}
 .mv{font-family:var(--f2);font-size:18px;font-weight:700;line-height:1}
 .mv .u{font-size:9px;color:var(--muted)}
-
-.clink{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:10px 14px;border-top:1px solid var(--brd);
-  font-family:var(--f2);font-size:9px;color:var(--B);
-  background:rgba(47,168,255,.04);
-  text-decoration:none;
-}
+.clink{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;font-family:var(--f2);font-size:9px;color:var(--B);background:rgba(47,168,255,.04);text-decoration:none;}
 .clink:active{background:rgba(47,168,255,.1)}
-
-/* ── BOTTOM STATS ── */
 .bstats{margin:14px 14px 0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .bs{background:var(--s1);border:1px solid var(--brd);border-radius:10px;padding:14px}
 .bsl{font-family:var(--f2);font-size:8px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-bottom:6px}
 .bsv{font-family:var(--f2);font-size:16px;font-weight:700}
 .bsv.g{color:var(--G)}.bsv.y{color:var(--Y)}.bsv.r{color:var(--R)}
-
-/* ── FOOTER ── */
-.footer{
-  margin:14px 14px 0;padding:14px 16px;
-  background:var(--s1);border:1px solid var(--brd);border-radius:10px;
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
-}
+.footer{margin:14px 14px 0;padding:14px 16px;background:var(--s1);border:1px solid var(--brd);border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
 .fn{font-family:var(--f2);font-size:9px;color:var(--muted);line-height:1.7}
-.eb{
-  font-family:var(--f2);font-size:9px;color:var(--B);
-  border:1px solid rgba(47,168,255,.25);
-  padding:8px 12px;border-radius:7px;white-space:nowrap;text-decoration:none;
-}
+.eb{font-family:var(--f2);font-size:9px;color:var(--B);border:1px solid rgba(47,168,255,.25);padding:8px 12px;border-radius:7px;white-space:nowrap;text-decoration:none;}
 .eb:active{background:rgba(47,168,255,.1)}
-
-.upd-row{
-  text-align:center;margin:12px 0 36px;
-  font-family:var(--f2);font-size:9px;color:var(--dim);letter-spacing:.06em;
-}
+.upd-row{text-align:center;margin:12px 0 36px;font-family:var(--f2);font-size:9px;color:var(--dim);letter-spacing:.06em;}
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="bar">
   <div class="brand">
     <div class="brand-icon">🚛</div>
@@ -220,7 +135,6 @@ body{font-family:var(--f1);background:var(--bg);color:var(--txt);min-height:100v
   </div>
 </div>
 
-<!-- DYNAMIC CONTENT -->
 <div id="root">
   <div class="loading">
     <div class="spinner"></div>
@@ -231,83 +145,59 @@ body{font-family:var(--f1);background:var(--bg);color:var(--txt);min-height:100v
 <div class="upd-row">Оновлення кожні 60с · <span id="nxt">—</span> · <a href="https://nakordoni.com.ua/chergy/" target="_blank" style="color:var(--B)">nakordoni.com.ua ↗</a></div>
 
 <script>
-/* ═══════════════════════════════════
-   CARGOCROSS — REAL DATA ENGINE
-   Джерело: /api/queue → nakordoni.com.ua → ДПСУ
-   Оновлення: кожні 60 секунд
-═══════════════════════════════════ */
-
 const COUNTRY_META = {
   HU: { label:'Угорщина', color:'#E03A3A' },
   SK: { label:'Словаччина', color:'#3FBF50' },
   RO: { label:'Румунія', color:'#FF8C00' },
 };
 
-// Hourly load patterns per KPP (for trend chart — pattern stays, numbers are real)
 const PEAK_HOURS = {
-  chop: [6,7,8,9,14,15,16,17],
-  uz:   [7,8,9,10,16,17,18],
-  dya:  [8,9,14,15],
-  luz:  [8,9,10],
-  mb:   [8,9,17,18],
-  vyl:  [9,10,16],
-  sol:  [9,10],
-  dzv:  [10,11],
+  chop:[6,7,8,9,14,15,16,17], uz:[7,8,9,10,16,17,18],
+  dya:[8,9,14,15], luz:[8,9,10], mb:[8,9,17,18],
+  vyl:[9,10,16], sol:[9,10], dzv:[10,11],
 };
 
-/* ── STATUS FROM QUEUE COUNT ── */
 function statusOf(trucks, cargo) {
-  if (trucks === null || trucks === undefined)
-    return { cls:'pna', label:'ДАНІ...', color:'var(--dim)' };
-  if (trucks === 0)
-    return { cls:'poff', label:'ЗАЧИНЕНО', color:'var(--muted)' };
-  const [lo, hi] = cargo ? [35, 80] : [12, 30];
-  if (trucks < lo) return { cls:'pg', label:'ВІЛЬНО',  color:'var(--G)' };
-  if (trucks < hi) return { cls:'py', label:'ЧЕРГА',   color:'var(--Y)' };
-  return               { cls:'pr', label:'ЗАТОР',  color:'var(--R)' };
+  if (trucks===null||trucks===undefined) return {cls:'pna',label:'ДАНІ...',color:'var(--dim)'};
+  if (trucks===0) return {cls:'poff',label:'ЗАЧИНЕНО',color:'var(--muted)'};
+  const [lo,hi] = cargo ? [35,80] : [12,30];
+  if (trucks<lo) return {cls:'pg',label:'ВІЛЬНО',color:'var(--G)'};
+  if (trucks<hi) return {cls:'py',label:'ЧЕРГА',color:'var(--Y)'};
+  return {cls:'pr',label:'ЗАТОР',color:'var(--R)'};
 }
 
 function waitStr(trucks, cargo) {
   if (!trucks) return '—';
-  const m = Math.round(trucks * (cargo ? 4 : 2.2));
-  const h = Math.floor(m / 60), mm = m % 60;
-  return h > 0 ? `${h}г ${mm}м` : `${mm}м`;
+  const m = Math.round(trucks*(cargo?4:2.2));
+  const h = Math.floor(m/60), mm = m%60;
+  return h>0 ? `${h}г ${mm}м` : `${mm}м`;
 }
 
 function score(cp) {
-  if (!cp.trucks || cp.trucks === 0) return 9999;
-  return cp.trucks * (cp.cargo ? 1 : 0.7) + cp.dist * 0.15;
+  if (!cp.trucks||cp.trucks===0) return 9999;
+  return cp.trucks*(cp.cargo?1:0.7)+cp.dist*0.15;
 }
 
-/* ── TREND BARS (pattern only, no real historical) ── */
 function trendBars(id, h) {
-  const peaks = PEAK_HOURS[id] || [];
+  const peaks = PEAK_HOURS[id]||[];
   let html = '';
-  for (let i = 0; i < 24; i++) {
-    const isPeak  = peaks.includes(i);
-    const isQuiet = i >= 0 && i < 5;
-    const isNow   = i === h;
-    const pct = isPeak ? 28 : isQuiet ? 5 : 14;
-    const bc  = isPeak ? 'var(--R)' : isQuiet ? 'var(--G)' : 'var(--Y)';
-    html += `<div style="flex:1;height:${pct}px;background:${bc};border-radius:2px 2px 0 0;opacity:${isNow?1:.5}"></div>`;
+  for (let i=0;i<24;i++) {
+    const isPeak=peaks.includes(i), isQuiet=i<5, isNow=i===h;
+    const pct=isPeak?28:isQuiet?5:14;
+    const bc=isPeak?'var(--R)':isQuiet?'var(--G)':'var(--Y)';
+    html+=`<div style="flex:1;height:${pct}px;background:${bc};border-radius:2px 2px 0 0;opacity:${isNow?1:.5}"></div>`;
   }
   return html;
 }
 
-/* ── RENDER ── */
 let expanded = null;
 
 function renderApp(data) {
-  const h   = new Date().getHours();
-  const cps = data.checkpoints || [];
+  const h = new Date().getHours();
+  const cps = data.checkpoints||[];
+  const sorted = [...cps].sort((a,b)=>score(a)-score(b));
+  const bestCargo = sorted.find(c=>c.cargo&&c.trucks>0);
 
-  // Sort by score
-  const sorted = [...cps].sort((a, b) => score(a) - score(b));
-
-  // Best cargo
-  const bestCargo = sorted.find(c => c.cargo && c.trucks > 0);
-
-  // Build hero
   let heroHTML = '';
   if (bestCargo) {
     const st = statusOf(bestCargo.trucks, bestCargo.cargo);
@@ -315,20 +205,11 @@ function renderApp(data) {
       <div class="hero">
         <div class="hero-label">⚡ Найшвидший КПП для тягачів зараз</div>
         <div class="hero-kpp">${bestCargo.flag} ${bestCargo.name}</div>
-        <div class="hero-sub">${bestCargo.country === 'HU' ? 'Угорщина → ЄС' : bestCargo.country === 'SK' ? 'Словаччина → ЄС' : 'Румунія → ЄС'} · ${bestCargo.dist} км від Ужгорода</div>
+        <div class="hero-sub">${bestCargo.country==='HU'?'Угорщина → ЄС':bestCargo.country==='SK'?'Словаччина → ЄС':'Румунія → ЄС'} · ${bestCargo.dist} км від Ужгорода</div>
         <div class="hero-grid">
-          <div class="hbox">
-            <div class="hbox-l">Тягачів у черзі</div>
-            <div class="hbox-v" style="color:${st.color}">${bestCargo.trucks ?? '—'}<span class="u"> авт</span></div>
-          </div>
-          <div class="hbox">
-            <div class="hbox-l">Час очікування</div>
-            <div class="hbox-v">${waitStr(bestCargo.trucks, bestCargo.cargo)}</div>
-          </div>
-          <div class="hbox">
-            <div class="hbox-l">Статус</div>
-            <div class="hbox-v" style="font-size:13px;color:${st.color}">${st.label}</div>
-          </div>
+          <div class="hbox"><div class="hbox-l">Тягачів у черзі</div><div class="hbox-v" style="color:${st.color}">${bestCargo.trucks??'—'}<span class="u"> авт</span></div></div>
+          <div class="hbox"><div class="hbox-l">Час очікування</div><div class="hbox-v">${waitStr(bestCargo.trucks,bestCargo.cargo)}</div></div>
+          <div class="hbox"><div class="hbox-l">Статус</div><div class="hbox-v" style="font-size:13px;color:${st.color}">${st.label}</div></div>
         </div>
         <div class="hero-footer">
           <div class="dot"></div>
@@ -336,192 +217,131 @@ function renderApp(data) {
           <span class="src-tag">ДПСУ via nakordoni</span>
           <span id="upd-ago">—</span>
         </div>
-      </div>
-    `;
+      </div>`;
   }
 
-  // Build cards grouped by country (but sorted by speed globally)
-  let cardsHTML = '';
-  let lastCountry = null;
-  let groupOpen   = false;
-
-  sorted.forEach((cp, idx) => {
-    const st  = statusOf(cp.trucks, cp.cargo);
-    const wt  = waitStr(cp.trucks, cp.cargo);
-    const meta = COUNTRY_META[cp.country] || {};
-    const isExpanded = expanded === cp.id;
-    const rank = idx + 1;
-
-    if (cp.country !== lastCountry) {
-      if (groupOpen) cardsHTML += '</div>'; // close .cards
-      lastCountry = cp.country;
-      groupOpen = true;
-      cardsHTML += `
-        <div class="sec">
-          <div class="sc" style="background:${meta.color}"></div>
-          <div class="sf">${cp.flag}</div>
-          <div class="sl">${meta.label}</div>
-          <div class="sline"></div>
-        </div>
-        <div class="cards">
-      `;
+  let cardsHTML='', lastCountry=null, groupOpen=false;
+  sorted.forEach((cp,idx)=>{
+    const st=statusOf(cp.trucks,cp.cargo);
+    const wt=waitStr(cp.trucks,cp.cargo);
+    const meta=COUNTRY_META[cp.country]||{};
+    const isExpanded=expanded===cp.id;
+    const rank=idx+1;
+    if (cp.country!==lastCountry) {
+      if (groupOpen) cardsHTML+='</div>';
+      lastCountry=cp.country; groupOpen=true;
+      cardsHTML+=`<div class="sec"><div class="sc" style="background:${meta.color}"></div><div class="sf">${cp.flag}</div><div class="sl">${meta.label}</div><div class="sline"></div></div><div class="cards">`;
     }
-
-    cardsHTML += `
-      <div class="card${rank === 1 ? ' rank1' : ''}" id="c-${cp.id}">
+    cardsHTML+=`
+      <div class="card${rank===1?' rank1':''}" id="c-${cp.id}">
         <div class="chead" onclick="toggle('${cp.id}')">
           <div class="crank">${rank}</div>
           <div class="cinfo">
             <div class="cname">${cp.name}</div>
-            <div class="cmeta">${cp.cargo ? '🚚 ВАНТАЖНИЙ' : '🚛 ТЯГАЧ/10Т'} · ${cp.dist}км</div>
+            <div class="cmeta">${cp.cargo?'🚚 ВАНТАЖНИЙ':'🚛 ТЯГАЧ/10Т'} · ${cp.dist}км</div>
           </div>
           <div class="pill ${st.cls}">${st.label}</div>
         </div>
-
-        <div class="cbody${isExpanded ? ' open' : ''}" id="b-${cp.id}">
+        <div class="cbody${isExpanded?' open':''}" id="b-${cp.id}">
           <div class="mrow">
-            <div class="mbox">
-              <div class="ml">У черзі</div>
-              <div class="mv" style="color:${st.color}">${cp.trucks ?? '—'}<span class="u"> авт</span></div>
-            </div>
-            <div class="mbox">
-              <div class="ml">Очікування</div>
-              <div class="mv">${wt}</div>
-            </div>
-            <div class="mbox">
-              <div class="ml">Відстань</div>
-              <div class="mv">${cp.dist}<span class="u"> км</span></div>
-            </div>
+            <div class="mbox"><div class="ml">У черзі</div><div class="mv" style="color:${st.color}">${cp.trucks??'—'}<span class="u"> авт</span></div></div>
+            <div class="mbox"><div class="ml">Очікування</div><div class="mv">${wt}</div></div>
+            <div class="mbox"><div class="ml">Відстань</div><div class="mv">${cp.dist}<span class="u"> км</span></div></div>
           </div>
-
           <div style="padding:12px 13px;border-top:1px solid var(--brd)">
             <div style="font-family:var(--f2);font-size:8px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-bottom:8px">Типова завантаженість по годинах</div>
-            <div style="display:flex;align-items:flex-end;gap:3px;height:28px">${trendBars(cp.id, h)}</div>
+            <div style="display:flex;align-items:flex-end;gap:3px;height:28px">${trendBars(cp.id,h)}</div>
             <div style="display:flex;justify-content:space-between;margin-top:4px">
               ${['00','03','06','09','12','15','18','21'].map(l=>`<span style="font-family:var(--f2);font-size:7px;color:var(--dim)">${l}</span>`).join('')}
             </div>
           </div>
-
-          <a class="clink" href="${cp.url}" target="_blank">
-            <span>📊 Переглянути реальні дані → nakordoni.com.ua</span>
-            <span style="color:var(--B);font-size:12px">↗</span>
-          </a>
+          <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--brd)">
+            <a class="clink" href="${cp.url}" target="_blank" style="border-right:1px solid var(--brd)">
+              <span>📊 Черга</span><span style="color:var(--B);font-size:12px">↗</span>
+            </a>
+            <a class="clink" href="${cp.cam||'https://dpsu.gov.ua/uk/punkti-propusku-punkti-kontrolyu'}" target="_blank">
+              <span>📷 Камера LIVE</span><span style="color:var(--G);font-size:12px">↗</span>
+            </a>
+          </div>
         </div>
-      </div>
-    `;
+      </div>`;
   });
+  if (groupOpen) cardsHTML+='</div>';
 
-  if (groupOpen) cardsHTML += '</div>';
+  const open=sorted.filter(c=>c.trucks>0);
+  const avgQ=open.length?Math.round(open.reduce((a,b)=>a+(b.trucks||0),0)/open.length):0;
+  const quietest=[...open].sort((a,b)=>(a.trucks||999)-(b.trucks||999))[0];
+  const avgCls=avgQ<30?'g':avgQ<70?'y':'r';
 
-  // Bottom stats
-  const open   = sorted.filter(c => c.trucks > 0);
-  const avgQ   = open.length ? Math.round(open.reduce((a,b) => a + (b.trucks||0), 0) / open.length) : 0;
-  const quietest = [...open].sort((a,b) => (a.trucks||999)-(b.trucks||999))[0];
-  const avgCls = avgQ < 30 ? 'g' : avgQ < 70 ? 'y' : 'r';
-
-  const statsHTML = `
+  document.getElementById('root').innerHTML = heroHTML + cardsHTML + `
     <div class="bstats">
       <div class="bs"><div class="bsl">Середня черга</div><div class="bsv ${avgCls}">${avgQ} авто</div></div>
-      <div class="bs"><div class="bsl">Найтихіший</div><div class="bsv g">${quietest ? quietest.name.split('–')[0].trim() : '—'}</div></div>
+      <div class="bs"><div class="bsl">Найтихіший</div><div class="bsv g">${quietest?quietest.name.split('–')[0].trim():'—'}</div></div>
       <div class="bs"><div class="bsl">КПП активних</div><div class="bsv g">${open.length}/${sorted.length}</div></div>
       <div class="bs"><div class="bsl">Джерело даних</div><div class="bsv" style="font-size:11px;color:var(--B)">ДПСУ · LIVE</div></div>
     </div>
-  `;
-
-  const footerHTML = `
     <div class="footer">
       <div class="fn">CargoCross · Закарпаття<br>Тягачі та 10-тонки · Дані ДПСУ</div>
       <a href="https://nakordoni.com.ua/chergy/" target="_blank" class="eb">Всі дані ↗</a>
-    </div>
-  `;
-
-  document.getElementById('root').innerHTML = heroHTML + cardsHTML + statsHTML + footerHTML;
+    </div>`;
   updateAgo(data.updated);
 }
 
 function toggle(id) {
-  expanded = expanded === id ? null : id;
-  document.querySelectorAll('.cbody').forEach(el => el.classList.remove('open'));
-  if (expanded) {
-    const b = document.getElementById('b-' + expanded);
-    if (b) b.classList.add('open');
-  }
+  expanded=expanded===id?null:id;
+  document.querySelectorAll('.cbody').forEach(el=>el.classList.remove('open'));
+  if (expanded) { const b=document.getElementById('b-'+expanded); if(b) b.classList.add('open'); }
 }
 
-/* ── DATA FETCHER ── */
-let lastFetch = null;
-let fetchFailed = false;
+let lastFetch=null;
 
 async function fetchData() {
   setStatus('loading');
   try {
-    const res = await fetch('/api/queue?t=' + Date.now());
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const data = await res.json();
-    lastFetch = data;
-    fetchFailed = false;
+    const res=await fetch('/api/queue?t='+Date.now());
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const data=await res.json();
+    lastFetch=data;
     setStatus('ok');
     renderApp(data);
-  } catch (err) {
-    fetchFailed = true;
+  } catch(err) {
     setStatus('error');
     if (!lastFetch) {
-      // First load failed
-      document.getElementById('root').innerHTML = `
-        <div class="error-box">
-          <div style="font-size:24px">⚠️</div>
-          <p>Не вдалося завантажити дані.<br>Перевірте підключення або спробуйте пізніше.</p>
-          <div class="retry-btn" onclick="fetchData()">Спробувати знову</div>
-        </div>
-      `;
+      document.getElementById('root').innerHTML=`<div class="error-box"><div style="font-size:24px">⚠️</div><p>Не вдалося завантажити дані.<br>Спробуйте пізніше.</p><div class="retry-btn" onclick="fetchData()">Спробувати знову</div></div>`;
     }
-    // If we have old data, keep showing it with error indicator
   }
 }
 
 function setStatus(state) {
-  const dot = document.getElementById('status-dot');
-  const txt = document.getElementById('status-txt');
-  if (!dot || !txt) return;
-  if (state === 'ok') {
-    dot.className = 'dot';
-    txt.textContent = 'LIVE';
-  } else if (state === 'error') {
-    dot.className = 'dot red';
-    txt.textContent = 'помилка';
-  } else {
-    dot.className = 'dot yellow';
-    txt.textContent = 'оновлення...';
-  }
+  const dot=document.getElementById('status-dot');
+  const txt=document.getElementById('status-txt');
+  if (!dot||!txt) return;
+  if (state==='ok'){dot.className='dot';txt.textContent='LIVE';}
+  else if (state==='error'){dot.className='dot red';txt.textContent='помилка';}
+  else {dot.className='dot yellow';txt.textContent='оновлення...';}
 }
 
 function updateAgo(isoStr) {
   if (!isoStr) return;
-  const el = document.getElementById('upd-ago');
+  const el=document.getElementById('upd-ago');
   if (!el) return;
-  const diff = Math.floor((Date.now() - new Date(isoStr)) / 1000);
-  el.textContent = diff < 10 ? 'щойно' : `${diff}с тому`;
+  const diff=Math.floor((Date.now()-new Date(isoStr))/1000);
+  el.textContent=diff<10?'щойно':`${diff}с тому`;
 }
 
-/* ── CLOCK & COUNTDOWN ── */
 function tick() {
-  const now = new Date();
-  const clockEl = document.getElementById('clock');
-  if (clockEl) clockEl.textContent =
-    now.toLocaleTimeString('uk-UA', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
-
-  const ms = 60000 - (Date.now() % 60000);
-  const s  = Math.ceil(ms / 1000);
-  const nxtEl = document.getElementById('nxt');
-  if (nxtEl) nxtEl.textContent = `${s}с`;
-
+  const now=new Date();
+  const clockEl=document.getElementById('clock');
+  if (clockEl) clockEl.textContent=now.toLocaleTimeString('uk-UA',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  const ms=60000-(Date.now()%60000);
+  const nxtEl=document.getElementById('nxt');
+  if (nxtEl) nxtEl.textContent=`${Math.ceil(ms/1000)}с`;
   if (lastFetch) updateAgo(lastFetch.updated);
 }
 
-/* ── INIT ── */
 fetchData();
-setInterval(fetchData, 60_000);
-setInterval(tick, 1_000);
+setInterval(fetchData,60000);
+setInterval(tick,1000);
 </script>
 </body>
 </html>

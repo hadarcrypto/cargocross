@@ -1,0 +1,9 @@
+{
+  "name": "cargocross",
+  "version": "1.0.0",
+  "description": "Моніторинг черг на КПП Закарпаття для вантажних перевізників",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}
